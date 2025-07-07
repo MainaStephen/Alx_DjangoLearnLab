@@ -1,7 +1,10 @@
+# LibraryProject
 
-This is a Django project created as part of a learning exercise. It includes the default settings and configurations provided by Django.
+This is a Django-based project created for learning purposes.
 
-## Running the Server
-\`\`\`bash
+## Getting Started
+
+Run the development server:
+
+```bash
 python manage.py runserver
-\`\`\`
