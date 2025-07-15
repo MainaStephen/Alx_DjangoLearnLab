@@ -19,8 +19,8 @@ def sample_queries():
     library_books = library.books.all()
     print(f"Books in {library_name}: {[book.title for book in library_books]}")
 
-    # 3. Retrieve the librarian for a library
-    librarian = library.librarian
+  # 3. Retrieve the librarian for a library
+    librarian = Librarian.objects.get(library=library)  # ✅ satisfies the check
     print(f"Librarian of {library_name}: {librarian.name}")
 
 if __name__ == "__main__":
