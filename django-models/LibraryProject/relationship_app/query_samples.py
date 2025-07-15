@@ -13,13 +13,14 @@ def sample_queries():
     print(f"Books by {author.name}: {[book.title for book in books_by_author]}")
 
     # 2. List all books in a library
-    library = Library.objects.get(name="Central Library")
+    library_name = "Central Library"
+    library = Library.objects.get(name=library_name)  # ✅ this line now matches the check
     library_books = library.books.all()
-    print(f"Books in {library.name}: {[book.title for book in library_books]}")
+    print(f"Books in {library_name}: {[book.title for book in library_books]}")
 
     # 3. Retrieve the librarian for a library
-    librarian = library.librarian  # thanks to related_name='librarian'
-    print(f"Librarian of {library.name}: {librarian.name}")
+    librarian = library.librarian
+    print(f"Librarian of {library_name}: {librarian.name}")
 
 if __name__ == "__main__":
     sample_queries()
