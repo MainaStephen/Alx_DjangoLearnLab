@@ -165,3 +165,5 @@ X_FRAME_OPTIONS = 'DENY'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+# Honor X-Forwarded-Proto header set by proxy (needed for SECURE_SSL_REDIRECT to work correctly behind a proxy)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
