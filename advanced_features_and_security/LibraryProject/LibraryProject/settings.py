@@ -143,3 +143,25 @@ CSRF_COOKIE_SECURE = True
 
 # ✅ Ensures session cookies are sent over HTTPS only
 SESSION_COOKIE_SECURE = True
+
+
+# --- HTTPS Enforcement Settings ---
+# ✅ Redirect all HTTP traffic to HTTPS
+SECURE_SSL_REDIRECT = True  # Only set this to True in production
+
+# ✅ HTTP Strict Transport Security (HSTS) headers
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# ✅ Ensure browser-based security features
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# ✅ Clickjacking protection
+X_FRAME_OPTIONS = 'DENY'
+
+# ✅ Secure cookies
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
