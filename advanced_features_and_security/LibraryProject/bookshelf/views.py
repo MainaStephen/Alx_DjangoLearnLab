@@ -1,7 +1,6 @@
-from django.shortcuts import render
 
-# Create your views here.
-# books/views.py
+from django.shortcuts import render, redirect
+from .forms import ExampleForm
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import permission_required
@@ -38,3 +37,16 @@ def book_delete(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     book.delete()
     return redirect('book_list')
+
+
+
+
+def example_form_view(request):
+    if request.method == 'POST':
+        form = ExampleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('book_list')
+    else:
+        form = ExampleForm()
+    return render(request, 'bookshelf/form_example.html', {'form': form})
