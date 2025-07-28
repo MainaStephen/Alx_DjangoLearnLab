@@ -129,3 +129,17 @@ LOGOUT_REDIRECT_URL = '/login/'
 AUTH_USER_MODEL = 'bookshelf.CustomUser'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+# ✅ Prevents browser from guessing content types
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# ✅ Enables the XSS protection filter in the browser
+SECURE_BROWSER_XSS_FILTER = True
+
+# ✅ Prevents your site from being rendered in an iframe (clickjacking protection)
+X_FRAME_OPTIONS = 'DENY'
+
+# ✅ Ensures CSRF cookies are sent over HTTPS only
+CSRF_COOKIE_SECURE = True
+
+# ✅ Ensures session cookies are sent over HTTPS only
+SESSION_COOKIE_SECURE = True
